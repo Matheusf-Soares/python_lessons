@@ -1,4 +1,4 @@
-# Capítulo 3
+# Capítulo 2
 
 # Imprime uma mensagem simples através de uma variável e a função print
 def imprime_mensagem_simples_21():
@@ -227,166 +227,87 @@ def erro_intencional_311():
     lista = ['0']
     index = int(input('Entre com um numero maior que 0 para gerar um erro.'))
     print(lista[index])
+
+# Capítulo 4
     
-erro_intencional_311()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+def pizzas_41():
+    pizzas = ['4 queijos', 'A moda', 'Frango com Catupiry']
+    for pizza in pizzas:
+        print(f'Um dos sabores de pizza que gosto é {pizza.lower()}.')
+    print('Eu adoro pizza.')
+    return pizzas
+
+def animais_42():
+    animais = ['golfinho', 'baleia azul' ,'baleia jubarte']
+    for animal in animais:
+        print(f'Você sabia que {animal} não é um peixe?')
+    print('Todos esses animais são mamiferos.')
+
+def contando_ate_vinte_43():
+    for i in range(1, 21):
+        print(i, end='_')
+
+def um_milhao_44():
+    numeros = [(i) for i in range(1, 1_000_001)]
+    for numero in numeros:
+        print(numero)
+
+def somando_um_milhao_45():
+    numeros = [(i) for i in range(1, 1_000_001)]
+    print(min(numeros))
+    print(max(numeros))
+    print(sum(numeros))
+
+def numeros_impares_46():
+    numeros_impares = [i for i in range(1, 20, 2)]
+    for numero in numeros_impares:
+        print(numero, end=' _ ')
+
+def tres_47():
+    multiplos_de_tres = [i for i in range(3, 30, 3)]
+    for multiplo in multiplos_de_tres:
+        print(multiplo, end=' _ ')
+
+def cubos_48():
+    cubos = [i**3 for i in range(1, 11)]
+    for cubo in cubos:
+        print(cubo, end=' _ ')
+
+def cube_comprehension_49():
+    cubos = [i**3 for i in range(1, 11)]
+    for cubo in cubos:
+        print(cubo, end=' _ ')
+
+def fatias_410():
+    numeros_ate_vinte = [i for i in range(1, 21)]
+    comprimento = len(numeros_ate_vinte)
+    primeiros_elementos = 'primeiros elementos'
+    elementos_do_meio = 'elementos do meio'
+    ultimos_elementos = 'ultimos elementos'
+    mensagem = 'Os {} da lista são: {}'
+    print(mensagem.format(primeiros_elementos, numeros_ate_vinte[0:3]))
+    print(mensagem.format(elementos_do_meio, numeros_ate_vinte[(comprimento//2 - 2):(comprimento//2 + 1)]))
+    print(mensagem.format(ultimos_elementos, numeros_ate_vinte[-3:]))
+
+def minhas_pizzas_suas_pizzas_411():
+    minhas_pizzas = pizzas_41()
+    friends_pizzas = minhas_pizzas[:]
+    minhas_pizzas.append('Pepperoni')
+    friends_pizzas.append('Calabresa')
+    print(f'Minhas pizzas favoritas sao: {", ".join(minhas_pizzas)}.')
+    print(f'As pizzas favoritas do meu amigo sao: {", ".join(friends_pizzas)}.')   
+
+def foods_412():
+    my_foods = ['pizza', 'falafel', 'carrot cake']
+    friend_foods = my_foods[:]
+    my_foods.append('cannoli')
+    friend_foods.append('ice cream')
+    print('My favorite foods are: ')
+    for item in my_foods:
+        print(item)
+    print("\nMy friend's favorite foods are:")
+    for item in friend_foods:
+        print(item)
+
+foods_412()
 
