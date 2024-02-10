@@ -309,5 +309,195 @@ def foods_412():
     for item in friend_foods:
         print(item)
 
-foods_412()
+def bufet_413():
+    refeicoes = ('Tropeiro', 'Miojo', 'Farofa', 'Feijoada', 'Lasanha')
+    mensagem = '\nBUFFET\n'
+    print(mensagem)
+    for refeicao in refeicoes:
+        print(refeicao)
+    # refeicoes[0] = 'Alface' TypeError -> Exigido pelo exercício que o erro fosse gerado
+    refeicoes_lista = list(refeicoes) 
+    refeicoes_lista[random.randint(0, len(refeicoes) - 1)] = 'Peixe'
+    refeicoes_lista[random.randint(0, len(refeicoes) - 1)] = 'Escondidinho'
 
+    refeicoes = tuple(refeicoes_lista)
+
+    print(mensagem)
+    for refeicao in refeicoes:
+        print(refeicao)
+
+# Capitulo 5
+
+def testes_condicionais_51():
+    car = 'subaru'
+    print('Is car == "subaru"? I predicted True.')
+    print(car == 'subaru')
+
+    print('Is car == "audi"? I predicted False.')
+    print(car == 'audi')
+
+    print('Comprimento da marca é igual a 7?')
+    print(len(car) == 7)
+
+    print('Comprimento da marca é igual a 6?')
+    print(len(car) == 6)
+
+    print(f'As primeiras 2 letras da marca são "au"?')
+    print(car[0:2].lower() == 'au')
+
+    print(f'As primeiras 2 letras da marca são "su"?')
+    print(car[0:2].lower() == 'su')
+
+def mais_testes_condicionais_52():
+    print("'Matheus' != 'Rafael'?", 'Matheus' != 'Rafael')
+    print("'Matheus' == 'Rafael'?", 'Matheus' == 'Rafael')
+    print("'Matheus'.lower() == 'matheus'?", 'Matheus'.lower() == 'matheus')
+    print('2 > 4?', 2 > 4)
+    print('2 < 4?', 2 < 4)
+    print('2 >= 4?', 2 >= 4)
+    print('2 <= 4?', 2 <= 4)
+    print('2 == 4?', 2 == 4)
+    print('2 != 4?', 2 != 4)
+
+def cores_alienigenas_53():
+    alien_color = 'green'
+    message = ''
+    if alien_color == 'green':
+        message = 'Ganhou 5 pontos.'
+    print(message, end='')
+
+def cores_alienigenas_2_54():
+    alien_color = 'red'
+    message = ''
+    if alien_color == 'green':
+        message = 'Ganhou 5 pontos.'
+    else:
+        message = 'Ganhou 10 pontos.'
+    print(message, end='')
+
+def cores_alienigenas_3_55():
+    alien_color = 'yellow'
+    message = ''
+
+    if alien_color.lower() == 'green':
+        message = 'Ganhou 5 pontos.'
+    elif alien_color.lower() == 'yellow':
+        message = 'Ganhou 10 pontos.'
+    elif alien_color.lower() == 'red':
+        message = 'Ganhou 15 pontos.'
+        
+    print(message, end='')
+
+def fases_da_vida_56():
+    age = int(input('Entre com sua idade: '))
+    message = '';
+    if age < 2:
+        message = 'um neném'
+    if 2 < age < 4:
+        message = 'uma criança'
+    if 4 < age < 13:
+        message = 'um(a) garoto(a)'
+    if 13 < age < 20:
+        message = 'um(a) adolescente'
+    if 20 < age < 65:
+        message = 'um(a) adulto(a)'
+    if age >= 65:
+        message = 'um(a) idoso(a)'
+    
+    print(f'Você é {message}.')
+
+def fruta_favorita_57():
+    frutas_favoritas = [ 'carambola', 'laranja', 'mixirica']
+    message = 'Você realmente gosta de {}!'
+
+    if 'banana' in frutas_favoritas:
+        print(message.format('bananas'))
+    if 'mixirica' in frutas_favoritas:
+        print(message.format('mixiricas'))
+    if 'carambola' in frutas_favoritas:
+        print(message.format('carambolas'))
+    if 'laranja' in frutas_favoritas:
+        print(message.format('laranjas'))
+    if 'maça' in frutas_favoritas:
+        print(message.format('maças'))
+
+def ola_admin_58():
+    usernames = ['admin', 'mfelipe', 'rvitor', 'fsoares']
+    for username in usernames:
+        message = ''
+        if username == 'admin':
+            message = 'Olá, administrador. Gostaria de ver um relatório de status?'
+        else:
+            message = f'Olá, {username}.'
+
+        print(message)
+
+def sem_usuarios_59():
+    usernames = ['admin', 'mfelipe', 'rvitor', 'fsoares']
+    usernames = []
+    if (usernames == []):
+        print('Lista vazia.')
+        print('É necessário encontrar alguns usuários.')
+        return
+    
+    for username in usernames:
+        message = ''
+        if username == 'admin':
+            message = 'Olá, administrador. Gostaria de ver um relatório de status?'
+        else:
+            message = f'Olá, {username}.'
+
+        print(message)
+
+def verificando_nomes_usuarios_510():
+    current_users = [ 'mfelipe', 'mpereira', 'fvitor', 'rricardo', 'aneves' ]
+    current_user_standardized = [user.lower() for user in current_users]
+    new_users = [ 'rvitor', 'fsoares', 'meduarda', 'hannah1', 'mfelipe']
+    for new_user in new_users:
+        message = ''
+        if new_user.lower() in current_users:
+            message = f'O nome de usuário "{new_user}" está em uso. Escolha outro nome.'
+        else:
+            message = f'O nome de usuário "{new_user}" encontra-se disponível.'
+        print(message)
+
+def numeros_ordinais_511():
+    numeros = list(range(0, 1_000_000))
+    for numero in numeros:
+        if numero > 3:
+            print(f'{numero}th.')
+        else:
+            if numero == 1:
+                print(f'{numero}st.')
+            elif numero == 2:
+                print(f'{numero}nd.')
+            elif numero == 3:
+                print(f'{numero}rd.')
+
+# Funções criadas à título de teste de otimização
+def numeros_ordinais_2_511():
+    numeros = list(range(0, 1_000_000))
+    for numero in numeros:
+        if numero == 1:
+            print(f'{numero}st.')
+        elif numero == 2:
+            print(f'{numero}nd.')
+        elif numero == 3:
+            print(f'{numero}rd.')
+        else:
+            print(f'{numero}th.')
+
+# Funções criadas à título de teste de otimização
+def numeros_ordinais_3_511():
+    numeros = list(range(0, 1_000_000))
+    lista_string = [(str(numero) + 'th\n') 
+                    if numero > 3 
+                    else (str(numero) + 'rd\n') if numero == 3 else (str(numero) + 'nd\n') if numero == 2 else (str(numero) + 'st\n')
+                    for numero in numeros 
+                    ]
+    numeros_string = ''.join(lista_string)
+    print(numeros_string)
+# numeros_ordinais_2_511()
+
+
+verificando_nomes_usuarios_510()
