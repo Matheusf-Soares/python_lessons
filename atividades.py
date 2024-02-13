@@ -499,5 +499,144 @@ def numeros_ordinais_3_511():
     print(numeros_string)
 # numeros_ordinais_2_511()
 
+# Capítulo 6
 
-verificando_nomes_usuarios_510()
+def pessoa_61():
+    pessoa = {
+        'first_name': 'terry',
+        'last_name': 'crews',
+        'age': 55,
+        'city': 'flint'
+    }
+
+    for key, value in pessoa.items():
+        print(f'{key}: {value}.')
+    
+def numeros_favoritos_62():
+    numeros_favoritos = {
+        'julie': 51,
+        'cabral': 157,
+        'pedro': 171,
+        'peter': 22,
+        'ricardo': 1
+    }
+    
+    for nome, numero_favorito in numeros_favoritos.items():
+        print(f'O número favoritm o de {nome} é {numero_favorito}.')
+
+def glossario_63():
+    glossario = {
+        'if': 'Estrutura condicional que permite que o bloco de código dentro de si seja compilado se sua condição for satisfeita.',
+        'elif': 'Estrutura condicional complementar que é executada se a condição do bloco if não for satisfeita e a sua própria for.',
+        'else': 'Estrutura condicional complementar que é executada '
+            'quando nenhuma das condições das outras estruturas que a prescederam foram satisfeitas.',
+        'for': 'Estrutura de repetição que itera sobre um tipo que representa um grupo, como listas, tuplas e conjuntos.',
+        'while': 'Estrutura de repetição que repete determinado bloco de código enquanto determinada condição for verdadeira.',
+        'function': 'Blocos de código reutilizáveis que são executados quando chamados. Podem receber parâmetros e retornar resultados.',
+        'class': 'Estrutura que permite a criação de objetos complexos. '
+            'São modelos para a criação de instâncias com atributos e métodos específicos.',
+        'try-except': 'Estrutura utilizada para tratamento de exceções. '
+            'O bloco `try` executa código que pode gerar uma exceção e o `except` trata a exceção capturada.',
+        'list comprehension': 'Método conciso para criar listas, '
+            'gerando novas listas aplicando uma expressão a cada item de uma sequência existente.',
+        'lambda': 'Função anônima expressa em uma única linha, '
+            'usada para funções simples, podendo receber qualquer número de argumentos, mas só pode ter uma expressão.',
+    
+    }
+    print('Glossário\n')
+    for palavra, significado in glossario.items():
+        print(f'{palavra}:\n\t{significado}')
+
+def glossario_64():
+    # O objetivo deste exercício era alterar o exercício 63.
+    pass
+
+def rios_65():
+    rios = {
+        'nilo': 'egito',
+        'amazonas': 'brasil',
+        'yangtze': 'china'
+    }
+    for rio, pais in rios.items():
+        print(f'O rio {rio.title()} atravessa o {pais.title()}')
+
+def pesquisa_66():
+    linguagens_favoritas = {
+        'jen': 'python',
+        'sarah': 'c',
+        'edward': 'rust',
+        'phil': 'python',
+    }
+
+    pessoas_para_participar = [ 'roberto', 'josh', 'sarah', 'ricardo', 'phil']
+
+    for pessoa in pessoas_para_participar:
+        message = f'Por favor, {pessoa}, participe de nossa pesquisa.'
+        if pessoa in linguagens_favoritas:
+            message = f'Obrigado pela resposta, {pessoa.title()}.'
+        
+        print(message)
+
+def pessoas_67():
+    pessoa_1 = {
+        'first_name': 'terry',
+        'last_name': 'crews',
+        'age': 55,
+        'city': 'flint'
+    }
+    pessoa_2 = {
+        'first_name': 'kazunori',
+        'last_name': 'yamauchi',
+        'age': 56,
+        'city': 'kashiwa'
+    }
+    pessoa_3 = {
+        'first_name': 'marie',
+        'last_name': 'curie',
+        'age': 77,
+        'city': 'varsóvia'
+    }
+
+    people = [ pessoa_1, pessoa_2, pessoa_3 ]
+
+    for pessoa in people:
+        for key, value in pessoa.items():
+            print(f'{key}: {str(value).title()}.')
+        print()
+
+def animais_estimacao_68():
+    pet_1 = {
+        'type': 'dog',
+        'owner': 'matthews'
+    }
+    pet_2 = {
+        'type': 'cat',
+        'owner': 'rita'
+        }
+    pet_3 = {
+        'type': 'horse',
+        'owner': 'henrique'
+    }
+
+    pets = [ pet_1, pet_2, pet_3 ]
+    message = ...
+    for pet in pets:
+        for key, value in pet.items():
+            message = f'{key}: {value.title()}'
+            print(message)
+        print()
+
+def lugares_favoritos_69():
+    favorite_places = {
+        'roberto': ['roma', 'noruega', 'paris'],
+        'lucas': ['roma', 'saint tropez', 'provença'],
+        'julia': ['alpes italianos', 'lago de garda', 'londres'],
+    }
+
+    for name, places in favorite_places.items():
+        print(f"{name.title()}'s favorite places are: ")
+        for place in places:
+            print(f'\t- {place.title()};')
+
+
+lugares_favoritos_69()
