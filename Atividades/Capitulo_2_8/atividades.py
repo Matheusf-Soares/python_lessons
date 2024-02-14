@@ -1,3 +1,5 @@
+# Este arquivo é referente às resoluções dos exercícios dos capítulos 2 a 8.
+
 # Capítulo 2
 
 # Imprime uma mensagem simples através de uma variável e a função print
@@ -511,7 +513,7 @@ def pessoa_61():
 
     for key, value in pessoa.items():
         print(f'{key}: {value}.')
-    
+
 def numeros_favoritos_62():
     numeros_favoritos = {
         'julie': 51,
@@ -639,7 +641,7 @@ def lugares_favoritos_69():
             print(f'\t- {place.title()};')
 
 # Capítulo 7
-            
+
 def aluguel_carro_71():
     tipo_carro = input('Qual tipo de carro você gostaria de alguar?\n')
     print(f'Vejamos se consigo encontrar um {tipo_carro} para você.')
@@ -816,8 +818,189 @@ def ferias_tao_sonhadas_710():
     for name, place in dream_vacation.items():
         print(f'{name.title()} iria para {place.title()}.')
 
+# Capítulo 8
 
+    # As funções a seguir contém funções dentro de si mesmas,
+    #  as quais foram criadas dessa maneira
+    # apenas a título de aprendizagem.
 
+def mensagem_81():
+    def display_message():
+        print('Capítulo voltado para criação e manipulação de funções.')
+    
+    display_message()
 
+def livro_favorito_82():
+    def favorite_book(title):
+        print(f'Um dos meus livros favoritos é {title.title()}.')
 
-ferias_tao_sonhadas_710()
+    favorite_book('Diário de um banana')
+
+def camiseta_83():
+    def make_shirt(tamanho, texto):
+        print(f'O tamanho e o texto da camisa são, respectivamente, {tamanho.upper()} e "{texto.upper()}".')
+    
+    make_shirt('xl', 'Nova camisa')
+    make_shirt(texto='Nova camisa 2', tamanho='l')
+
+def camisetas_grandes_84():
+    def make_shirt(texto='Eu amo Python', tamanho='xl'):
+        print(f'O tamanho e o texto da camisa são, respectivamente, {tamanho.upper()} e "{texto.upper()}".')
+    
+    make_shirt('Nova camisa','l')
+    make_shirt(texto='Nova camisa 2')
+    make_shirt()
+
+def cidades_85():
+    def describe_city(cidade, pais):
+        print(f'{cidade.title()} fica em {pais.title()}.')
+
+    describe_city('ibirité', 'brasil')
+
+def nome_cidades_86():
+    def city_country(cidade, pais):
+        cidade_formatada = f'{cidade.title()}, {pais.title()}'
+        return cidade_formatada
+    
+    print(city_country('ibirité', 'brasil'))
+    print(city_country('tokyo', 'japão'))
+    print(city_country('toronto', 'canadá'))
+
+def album_87():
+    def make_album(nome_artista, nome_album, numero_musicas=None):
+        dicionario_album = {
+            'author': nome_artista,
+            'title': nome_album
+        }
+        if numero_musicas != None:
+            dicionario_album['songs_count'] = numero_musicas
+
+        return dicionario_album
+    
+    print(make_album('queen', 'a night at the opera'))
+    print(make_album('queen', 'news of the world', 11))
+    print(make_album('queen', 'the game'))
+
+def albuns_usuarios_88():
+    def make_album(nome_artista, nome_album):
+        dicionario_album = {
+            'author': nome_artista,
+            'title': nome_album
+        }
+        return dicionario_album
+
+    while True:
+        name = input('Entre com o nome do artista(digite "quit" para sair): ')
+        if name == 'quit':
+            break
+        title = input('Entre com o nome do álbum(digite "quit" para sair): ')
+        if title == 'quit':
+            break
+        print(make_album(name, title))
+
+def mensagens_89():
+    def show_messages(messages):
+        for message in messages:
+            print(message)
+
+    messages = [
+        'Olá, como você está?',
+        'Eu estou bem, e você?',
+        'Estou bem também. O que está fazendo?',
+        'Estou estudando agora, e você?',
+        'Eu estou trabalhando',
+    ]
+    show_messages(messages)
+
+def enviando_mensagens_810():
+    def show_messages(messages):
+        for message in messages:
+            print(message)
+
+    def send_messages(messages, sent_messages):
+        while messages:
+            message = messages.pop(0)
+            print(message)
+            sent_messages.append(message)
+
+    messages = [
+        'Olá, como você está?',
+        'Eu estou bem, e você?',
+        'Estou bem também. O que está fazendo?',
+        'Estou estudando agora, e você?',
+        'Eu estou trabalhando',
+    ]
+    
+    show_messages(messages)
+    sent_messages = []
+    send_messages(messages, sent_messages)
+
+    print(messages, sent_messages, sep='\n')
+
+def mensagens_arquivadas_811():
+    # Cópia do exercício 8.10, com a diferença 
+    # de que desta vez o argumento passado para 
+    # a última função é, na verdade, uma cópia
+    def show_messages(messages):
+        for message in messages:
+            print(message)
+
+    def send_messages(messages, sent_messages):
+        while messages:
+            message = messages.pop(0)
+            print(message)
+            sent_messages.append(message)
+
+    messages = [
+        'Olá, como você está?',
+        'Eu estou bem, e você?',
+        'Estou bem também. O que está fazendo?',
+        'Estou estudando agora, e você?',
+        'Eu estou trabalhando',
+    ]
+    
+    show_messages(messages)
+    sent_messages = []
+    send_messages(messages[:], sent_messages)
+
+    print(messages, sent_messages, sep='\n')
+
+def sanduiches_812():
+    def mostrar_sanduiche(*ingredientes):
+        print('Sanduíche:')
+        for ingrediente in ingredientes:
+            print(f'\t- {ingrediente.title()};')
+    
+    mostrar_sanduiche('abacaxi', 'bacon', 'cheddar', 'alface', 'tomate')
+    mostrar_sanduiche('abacaxi', 'bacon', 'cheddar', 'linguiça', 'catupiry')
+    mostrar_sanduiche('abacaxi', 'bacon', 'cheddar', 'cebola roxa', 'calabresa')
+
+def perfil_usuario_813():
+    def build_profile(first, last, **user_info):
+        """Cria um dicionário contendo tudeo o que sabemos sobre um usuário."""
+        user_info['first_name'] = first
+        user_info['last_name'] = last
+        return user_info
+    
+    user_profile = build_profile(
+        'matheus',
+        'soares',
+        favorite_language= 'python',
+        developer= True,
+        good_classmate= True
+    )
+
+    print(user_profile)
+
+def carros_814():
+    def make_car(fabricante, modelo, **car_info):
+        car_info['fabricante'] = fabricante
+        car_info['modelo'] = modelo
+        return car_info
+    
+    car = make_car('Koenigsegg', 'Agera RS', edicao_limitada= False, velocidade_maxima= 447.19, motor= 'V8 5.0 biturbo')
+    print(car)
+
+# A partir da questão 8.15 do livro, 
+# passa a ser necessário a criação de 
+# outros arquivos, principalmente à título de aprendizam
