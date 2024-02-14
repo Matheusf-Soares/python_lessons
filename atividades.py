@@ -638,5 +638,186 @@ def lugares_favoritos_69():
         for place in places:
             print(f'\t- {place.title()};')
 
+# Capítulo 7
+            
+def aluguel_carro_71():
+    tipo_carro = input('Qual tipo de carro você gostaria de alguar?\n')
+    print(f'Vejamos se consigo encontrar um {tipo_carro} para você.')
 
-lugares_favoritos_69()
+def reservas_restaurante_72():
+    number_of_seats = input('Quantos lugares em uma mesa você precisa?\n')
+    number_of_seats = int(number_of_seats)
+    message = 'Sua mesa já está disponível.'
+    if number_of_seats > 8:
+        message = 'Será necessário aguardar por uma mesa.'
+    print(message)
+
+def multiplos_dez_73():
+    numero = input('Entre com um número: ')
+    numero = int(numero)
+    message = 'Não é múltiplo de 10.'
+    if numero % 10 == 0:
+        message = 'É múltiplo de 10.'
+    print(message)
+
+def ingredientes_pizza_74():
+    quit = False
+    while (quit == False):
+        entrance = input('Entre com um ingrediente da pizza. ')
+        if entrance == 'quit':
+            quit = True
+            continue
+        print(f'{entrance.title()} está sendo adicionado à pizza.')
+
+def ingressos_cinema_75():
+    
+    keep = True
+    while keep:
+        entrance = input('Entre com sua idade(type "quit" to stop): ')
+
+        if entrance == 'quit':
+            keep = False
+            continue
+
+        age = int(entrance)
+        ticket_price = ...
+        if age < 3:
+            ticket_price = 0.0
+        elif 3 <= age <= 12:
+            ticket_price = 10.0
+        elif age > 12:
+            ticket_price = 15.0
+        
+        message = f'O ingresso irá custar US$ {ticket_price:.2f}'
+        print(message)
+
+def tres_saidas_76():
+    active = True
+    while active:
+        entrance = input('Entre com sua idade(type "quit" to stop): ')
+
+        if entrance == 'quit':
+            active = False
+            continue
+
+        age = int(entrance)
+        ticket_price = ...
+        if age < 3:
+            ticket_price = 0.0
+        elif 3 <= age <= 12:
+            ticket_price = 10.0
+        elif age > 12:
+            ticket_price = 15.0
+        
+        message = f'O ingresso irá custar US$ {ticket_price:.2f}'
+        print(message)
+
+def tres_saidas_2_76():
+    
+    while True:
+        entrance = input('Entre com sua idade(type "quit" to stop): ')
+
+        if entrance == 'quit':
+            break
+
+        age = int(entrance)
+        ticket_price = ...
+        if age < 3:
+            ticket_price = 0.0
+        elif 3 <= age <= 12:
+            ticket_price = 10.0
+        elif age > 12:
+            ticket_price = 15.0
+        
+        message = f'O ingresso irá custar US$ {ticket_price:.2f}'
+        print(message)
+
+def infinito_77():
+    # O seguinte exercício exige que um loop infinito seja criado, portanto, trata-se de um erro intencional.
+    while True:
+        input('Este é um loop infinito, digite qualquer coisa para continuar.(ctrl + c para finalizar o programa) ')
+
+def lanchonete_78():
+    sandwich_orders = [ 
+        'sanduíche natural de atum simples',
+        'sanduíche de frango e cottage',
+        'sanduíche gelado de atum',
+        'sanduiche de ovo',
+     ]
+    
+    finished_sandwiches = []
+
+    for sandwich in sandwich_orders[:]:
+        print(f'Seu {sandwich} está pronto.')
+        finished_sandwiches.append(sandwich_orders.pop(0))
+
+    print()
+    for sandwich in finished_sandwiches:
+        print(f'{finished_sandwiches.index(sandwich) + 1} - {sandwich}')
+
+def lanchonete_2_78():
+    sandwich_orders = [ 
+        'sanduíche natural de atum simples',
+        'sanduíche de frango e cottage',
+        'sanduíche gelado de atum',
+        'sanduiche de ovo',
+     ]
+    
+    finished_sandwiches = []
+
+    while sandwich_orders:
+        sandwich = sandwich_orders.pop(0)
+        print(f'Seu {sandwich} está pronto.')
+        finished_sandwiches.append(sandwich)
+
+    print()
+    for sandwich in finished_sandwiches:
+        print(f'{finished_sandwiches.index(sandwich) + 1} - {sandwich.title()}')
+
+def sem_pastrami_79():
+    sandwich_orders = [ 
+        'sanduíche de pastrami', 
+        'sanduíche natural de atum simples',
+        'sanduíche de pastrami', 
+        'sanduíche de frango e cottage',
+        'sanduíche de pastrami', 
+        'sanduíche gelado de atum',
+        'sanduíche de pastrami', 
+        'sanduíche de ovo',
+     ]
+    
+    print('Lamentamos informar que a lanchonete encontra-se sem pastrami no momento.')
+
+    while 'sanduíche de pastrami' in sandwich_orders:
+        sandwich_orders.remove('sanduíche de pastrami')
+
+    finished_sandwiches = []
+
+    while sandwich_orders:
+        sandwich = sandwich_orders.pop(0)
+        print(f'Seu {sandwich} está pronto.')
+        finished_sandwiches.append(sandwich)
+
+    print()
+    for sandwich in finished_sandwiches:
+        print(f'{finished_sandwiches.index(sandwich) + 1} - {sandwich.title()}')
+
+def ferias_tao_sonhadas_710():
+    dream_vacation = {}
+    while True:
+        name = input('Entre com seu nome. ')
+        if name == 'quit':
+            break;
+        place = input('Se pudesse visitar qualquer lugar do mundo, para onde iria? ')
+        if place == 'quit':
+            break;
+        dream_vacation[name] = place
+
+    for name, place in dream_vacation.items():
+        print(f'{name.title()} iria para {place.title()}.')
+
+
+
+
+
+ferias_tao_sonhadas_710()
