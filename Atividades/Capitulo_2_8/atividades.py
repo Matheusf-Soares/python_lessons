@@ -1003,4 +1003,4 @@ def carros_814():
 
 # A partir da questão 8.15 do livro, 
 # passa a ser necessário a criação de 
-# outros arquivos, principalmente à título de aprendizam
+# outros arquivos, principalmente à título de aprendizagem
